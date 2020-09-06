@@ -1,0 +1,39 @@
+ /* *{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+ } */
+div{
+    size: width=3.80 height=2.60;  
+   background-size: width=3.80 height=2.60;
+}
+
+body{
+    border-block-color: red;
+    border: 160px;
+    background-size: width=3.80 height=2.60;
+    
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 90px 1fr
+   
+}
+
+#drapeau{
+text-align: center;
+}
+#titre1{
+    text-align: left;
+    
+}
+.titre2{
+    text-align: center;
+    color: red;
+}
+#année{
+    text-align: right;
+}
