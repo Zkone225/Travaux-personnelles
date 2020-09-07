@@ -6,7 +6,7 @@
     box-sizing: border-box;
 } */
 h1{
-    text-align: center;
+    text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;
 }
 header{
     background-color:grey;
@@ -19,7 +19,11 @@ header{
     margin-top: 50px;
 }
 .logo{
-    margin-top: 48px;
+    margin-left: 68px;
+    width: 280px;
+    height: 250px;
+    
+    
 }
 nav{
         position: sticky;
@@ -52,7 +56,7 @@ nav li :hover{
 } */
 @media screen and (min-width:980px){
     header label{
-        display: none;
+        /* display: none; */
     }
 }
 h2{
