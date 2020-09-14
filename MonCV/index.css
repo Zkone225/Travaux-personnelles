@@ -51,12 +51,12 @@ nav li :hover{
     background-color: grey;
     height: 40px;
 }
-/* body{
+body{
     width: 100%;
-} */
-@media screen and (min-width:980px){
+}
+@media screen and (min-width:250px){
     header label{
-        /* display: none; */
+        display: none;
     }
 }
 h2{
