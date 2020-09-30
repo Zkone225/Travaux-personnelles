@@ -34,13 +34,46 @@ SELECT Count(IdEmploye), positionEmploye,
  FROM employe 
  GROUP BY PositionEmploye 
 
+ SELECT Count(positionEmploye), positionEmploye,
+ MAX(DateEmbauche), MIN(DateEmbauche)
+ FROM employe 
+ GROUP BY PositionEmploye 
+
 --  Exercice 6 : GROUP BY, MAX
 -- Pour chaque Identificateur de titre, calculer les droits prévus maximum ( table droitsprevus, colonne droits)
-SELECT distinct IdTitre, max(droit) "droits maximum" 
+
+-- SELECT distinct IdTitre, max(droit) "droits maximum" 
+-- FROM droitprevu 
+-- GROUP BY IdTitre 
+
+-- SELECT IdTitre, ROUND(MIN((maximum*(droit/100))),2) "droits minimum"
+-- FROM droitprevu 
+-- GROUP BY (IdTitre) 
+
+SELECT IdTitre, ROUND(MAX(maximum*(droit/100)), 2 ) "droits maximum"
 FROM droitprevu 
-GROUP BY IdTitre 
+GROUP BY (IdTitre) 
 
+-- Exercice 7 : GROUP BY, clause sur un sous-ensemble HAVING
+-- Afficher le nombre des éditeurs regroupés par pays, en se limitant aux pays dont le nom contient un 'S’ou un 'R
+SELECT count(NomEditeur) "nombre editeurs regroupés par pays", Pays
+from editeur
+GROUP BY Pays
+HAVING Pays LIKE "%s%" OR Pays LIKE "%r%"
 
+-- Exercice 9 : Jointure entre trois tables
+-- Afficher les noms des auteurs parisiens, les titres et les prix de leurs livres
+SELECT NomAuteur, titre, prix
+FROM auteur
+INNER JOIN titreauteur
+ON auteur.IdAuteur=titreauteur.IdAuteur
+INNER JOIN titre
+ON titre.IdTitre=titreauteur.IdTitre
+WHERE Ville = "paris"
+
+SELECT a.NomAuteur, a.PnAuteur, a.ville, t.Titre, t.prix
+FROM auteur a, titre t
+where ville IN ("paris")
 
 
 
