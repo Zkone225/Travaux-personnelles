@@ -18,13 +18,30 @@ auto_increment = 100;
 create table type 
 (
 	TypeAvion			varchar(5) not null primary key,
-    capacite int not NULL
+    capacite int not NULL,
 	IdConstructeur		int(10) not null
 );
 
 -- Création de la table "Constructeur"
 create table constructeur 
 (
-    IdConstructeur		int(10) not null PRIMARY KEY
-	NomConstructeur   VARCHAR ()	
+    IdConstructeur		int(10) not null PRIMARY KEY,
+	NomConstructeur   VARCHAR (30)	
+);
+--  creation table aeroport
+create table aeroport 
+(
+	IdAeroport			VARCHAR(3) not null primary key,
+    NomAeroport VARCHAR(30) not NULL,
+	NomVilleDesservie		varchar(30) not null
+);
+
+-- creation table vol
+create table vol 
+(
+	NumVol			VARCHAR(3) not null primary key,
+    AeroportDept VARCHAR(3) not NULL,
+	HDepart		varchar(30) not null time,
+	AeroportArr VARCHAR(3) not NULL,
+	Harrivee not null time
 );
