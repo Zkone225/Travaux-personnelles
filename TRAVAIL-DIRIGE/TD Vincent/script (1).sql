@@ -303,6 +303,10 @@ LEFT join facture on
 client.ID_Client =facture.ID_clientFacture
 where numfact is NULL
 
+create TABLE test (
+	ajouter VARCHAR
+)
+
 
 
 
