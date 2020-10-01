@@ -39,9 +39,18 @@ create table aeroport
 -- creation table vol
 create table vol 
 (
-	NumVol			VARCHAR(3) not null primary key,
+	NumVol			int(3) not null primary key,
     AeroportDept VARCHAR(3) not NULL,
-	HDepart		varchar(30) not null time,
+	HDepart		time  (p)   not null,
 	AeroportArr VARCHAR(3) not NULL,
-	Harrivee not null time
+	Harrivee time  (p) NOT null 
 );
+
+VOL (NumVol, AeroportDept, Hdépart, AeroportArr, HArrivée)
+ NumVol numéro de vol (clé primaire, "IT" + 3 chiffres)
+ AeroportDept identificateur de l’aéroport de départ (clé étrangère vers
+la colonne IdAeroport de la table AEROPORT, 3 lettres)
+ Hdepart heure de départ (type heure)
+ AeroportArr identificateur de l’aéroport d’arrivée (clé étrangère vers
+la colonne IdAeroport de la table AEROPORT, 3 lettres)
+ Harrivee heure d’arrivée (type heure)
