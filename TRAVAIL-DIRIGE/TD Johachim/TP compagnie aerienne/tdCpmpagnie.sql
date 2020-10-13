@@ -37,11 +37,12 @@ create table aeroport
 );
 
 -- creation table vol
-create table vol 
-(
-	NumVol			VARCHAR(3) not null primary key,
-    AeroportDept VARCHAR(3) not NULL,
-	HDepart		varchar(30) not null time,
-	AeroportArr VARCHAR(3) not NULL,
-	Harrivee not null time
-);
+create table vol ( 
+    NumVol int(3) not null primary key, 
+    AeroportDept VARCHAR(3) not null, 
+    HDepart timestamp NOT null, 
+    AeroportArr VARCHAR(3) not null, 
+    Harrivee timestamp NOT null 
+	)
+
+
