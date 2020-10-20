@@ -1,0 +1,27 @@
+Editer, 1N Editeur, 1N Auteur: Contrat.edition
+Auteur: Id_auteur, Nom_auteur, Prenom_auteur, Pays_auteur, Ville_auteur
+Ecrir, 1N Auteur, 11 Livre
+Commenter, 11 Commentaire, 1N Livre
+Commentaire: Id_com, Libelle_com, note_com
+:
+
+Editeur: Id_editeur, Nom_editeur, Pays_editeur
+Publier, 11 Livre, 1N Editeur
+Livre: Id_li, Titre_li, Ss_titre_li, date_pub_li, Resume_li, Num_isbn, prix_li
+Concerner, 11 Livre, 1N Theme
+Theme: Id_theme, Libelle_theme
+Employe: Id_Em, Nom_Em, Prenom_Em, email_Em, mdp_Em, Type_Em
+
+Paiement: Id_Pmt, Montant_Pmt
+Commander, 0N Livre, 1N Commande
+Placer, 11 Livre, 1N Rayon
+Rayon: Id_Ra, Libelle_Ra
+Ranger, 1N Theme, 1N Rayon
+Enregistrer, 11 Employe, 1N Utilisateur
+
+Payer, 11 Paiement, 11 Commande : num.facture
+Commande: Id_cde, qte_cde
+Acheter, 1N Client, 11 Commande
+Client: Id_Clt, Nom_Clt, Prenom_Clt, Adr_Clt, Cp_Clt, Ville_Clt, Tel_Clt, email_Clt
+S'inscrir, 11 Client, 1N Utilisateur
+Utilisateur: Id_Ut, Nom_Ut, Prenom_Ut, email_Ut, mdp_Ut, Type_Ut
